@@ -8,13 +8,13 @@ index: function(){
     success : function(data,response){
       console.log(response);
       for(var i = 0;i < response.length ; i++){
-        console.log(response[i].price)
+        console.log(response[i]);
 
         var tr = "<tr><td>"+response[i].neighborhood+"</td>" +
          "<td>"+response[i].borough+"</td>" +
          "<td>"+response[i].zipcode+"</td>" +
          "<td>"+response[i].price+"</td>" +
-         "<td>"+response[i].unit+"</td>" +
+         "<td>"+response[i].units+"</td>" +
          "<td>"+response[i].priceperunit+"</td>" +
          "<td>"+response[i].sf+"</td>" +
          "<td>"+response[i].psf+"</td></tr>"

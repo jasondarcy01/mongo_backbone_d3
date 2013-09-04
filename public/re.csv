@@ -1,5 +1,5 @@
 neighborhood,borough,zipcode,price,units,priceperunit,sf,psf
-Greenpoint,Brooklyn,11222,750000,6,"$125,000",5000,$150
-Williamsburg,Brooklyn,11211,1500000,6,"$250,000",3000,$500
-Greenwich Village,Manhattan,10012,5500000,14,"$392,857",7000,$786
-Lower East Side,Manhattan,10002,2500000,24,"$104,167",10000,$250
+Greenpoint,Brooklyn,11222,750000,6,125000,5000,150
+Williamsburg,Brooklyn,11211,1500000,6,250000,3000,500
+Greenwich Village,Manhattan,10012,5500000,14,392857,7000,786
+Lower East Side,Manhattan,10002,2500000,24,104167,10000,250

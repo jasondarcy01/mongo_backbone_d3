@@ -5,7 +5,7 @@ class Multifamily
   field :borough, type: String
   field :zipcode, type: Integer
   field :price, type: Integer
-  field :unit, type: Integer
+  field :units, type: Integer
   field :priceperunit,type: Integer
   field :sf, type: Integer
   field :psf, type: Integer
