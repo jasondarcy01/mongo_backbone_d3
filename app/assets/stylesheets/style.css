@@ -1,3 +1,26 @@
-#container {
-  color: red;
+body {
+  background-color: #007700;
 }
+
+#container {
+  width: 1000px;
+  margin: 100px auto;
+  background-color: #eeffee;
+}
+
+#list_table {
+  padding-top: 20px;
+}
+
+#graph {
+  padding: 10px;
+}
+
+.grid_2 {
+  float: left;
+  width: 250px;}
+
+
+/*#container {
+  color: red;
+}*/

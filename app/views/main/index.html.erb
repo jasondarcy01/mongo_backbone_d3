@@ -1,76 +1,85 @@
 <div id="container">
-<table id="list_table" border="1">
-  <thead>
-    <tr>
-<td>Neighborhood</td>
-<td>Borough</td>
-<td>Zip Code</td>
-<td>Price</td>
-<td>Units</td>
-<td>Price per Unit</td>
-<td>Square Footage</td>
-<td>Price Per Square Foot</td>
 
-    </tr>
-  </thead>
-  <tbody id="table_body">
+  <div id="list_table">
+    <table border="1">
+      <thead>
+        <tr>
+    <th>Neighborhood</th>
+    <th>Borough</th>
+    <th>Zip Code</th>
+    <th>Price</th>
+    <th>Units</th>
+    <th>Price per Unit</th>
+    <th>Square Footage</th>
+    <th>Price Per Square Foot</th>
 
-  </tbody>
-</table>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+
+      </tbody>
+    </table>
+ </div>
+
+  <script type="text/javascript">
+  $(function(){
+  //alert("Hi...")
+    window.router = new MyRouter();
+    Backbone.history.start();
+  })
+  </script>
+
+
+
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernari placatae greges malint scripta, fatemur praetermittatur earumque ambigua liberiusque potius existunt terminatas vicinum scribentur.</p>
+
+    <p class="grid_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernari placatae greges malint scripta, fatemur praetermittatur earumque ambigua liberiusque potius existunt terminatas vicinum scribentur.</p>
+
+    <p class="grid_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernari placatae greges malint scripta, fatemur praetermittatur earumque ambigua liberiusque potius existunt terminatas vicinum scribentur.</p>
+
+    <p class="grid_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernari placatae greges malint scripta, fatemur praetermittatur earumque ambigua liberiusque potius existunt terminatas vicinum scribentur.</p>
+
+    <p class="grid_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernari placatae greges malint scripta, fatemur praetermittatur earumque ambigua liberiusque potius existunt terminatas vicinum scribentur.</p>
+
+<script type="text/javascript">
+
+    // var dataset = {price:720000, zipcode:11222, price:1500000, zipcode:11211, price:5500000, zipcode:10012, price:2500000, zipcode:10002};
+
+    var width = 600;
+    var height = 250;
+
+    var dataset = [150, 500, 786, 250];
+    var zipcodeset = [11222, 11211, 10012, 10002];
+
+    var xScale = d3.scale.ordinal()
+                    .domain(d3.range(dataset.length))
+                    .rangeRoundBands([0,width], 0.05);
+
+    var yScale = d3.scale.linear()
+                    .domain([0, d3.max(dataset)])
+                    .range([0, height]);
+
+        var svg = d3.select("#container")
+                      .append("svg")
+                      .attr("width", width)
+                      .attr("height", height);
+
+        var barchart = svg.selectAll("rect")
+                       .data(dataset)
+                       .enter()
+                       .append("rect")
+                       .attr("x", function(d, i) {
+                            return xScale(i);
+                       })
+                       .attr("y", function(d){
+                            return height - yScale(d);
+                       })
+                        .attr("width", xScale.rangeBand())
+                        .attr("height", function(d) {
+                            return yScale(d);
+                        });
+    </script>
+
+
 </div>
-
-<script type="text/javascript">
-$(function(){
-//alert("Hi...")
-  window.router = new MyRouter();
-  Backbone.history.start();
-})
-</script>
-
-<script type="text/javascript">
-
-  // var dataset = {price:720000, zipcode:11222, price:1500000, zipcode:11211, price:5500000, zipcode:10012, price:2500000, zipcode:10002};
-
-  var width = 600;
-  var height = 250;
-
-  var dataset = [720000, 1500000, 5500000, 2500000];
-  var zipcodeset = [11222, 11211, 10012, 10002];
-
-  var xScale = d3.scale.ordinal()
-                  .domain(d3.range(dataset.length))
-                  .rangeRoundBands([0,width], 0.05);
-
-  var yScale = d3.scale.linear()
-                  .domain([0, d3.max(dataset)])
-                  .range([0, height]);
-
-      var svg = d3.select("body")
-                    .append("svg")
-                    .attr("width", width)
-                    .attr("height", height);
-
-      var barchart = svg.selectAll("rect")
-                     .data(dataset)
-                     .enter()
-                     .append("rect")
-                     .attr("x", function(d, i) {
-                          return xScale(i);
-                     })
-                     .attr("y", function(d){
-                          return height - yScale(d);
-                     })
-                      .attr("width", xScale.rangeBand())
-                      .attr("height", function(d) {
-                          return yScale(d);
-                      });
-
-
-
-</script>
-
-
-
-
-
-
